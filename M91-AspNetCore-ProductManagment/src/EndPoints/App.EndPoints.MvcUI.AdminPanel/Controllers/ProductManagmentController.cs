@@ -1,16 +1,17 @@
-﻿using App.EndPoints.MvcUI.AdminPanel.Models.Entities;
+﻿using App.EndPoints.MvcUI.AdminPanel.Models.Database;
+using App.EndPoints.MvcUI.AdminPanel.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
+using System.Reflection;
 
 namespace App.EndPoints.MvcUI.AdminPanel.Controllers
 {
     public class ProductManagementController : Controller
     {
-        private static List<Product> _productList = new List<Product>();
-        
+        private InMemoryDatabase _inMemoryDatabase = new InMemoryDatabase();
 
         public IActionResult Index()
         {
-            return View("Index", _productList);
+            return View("Index", _inMemoryDatabase.GetAllProducts());
         }
 
         public IActionResult Add()
@@ -21,106 +22,44 @@ namespace App.EndPoints.MvcUI.AdminPanel.Controllers
         [HttpPost]
         public IActionResult Add(Product newProductModel)
         {
-            var lastProductRecord = _productList.OrderByDescending(o => o.Id).FirstOrDefault();
-
-            if (lastProductRecord is null)
-                newProductModel.Id = 1;
-            else
-                newProductModel.Id = lastProductRecord.Id + 1;
-            
-            _productList.Add(newProductModel);
+            _inMemoryDatabase.AddProduct(newProductModel);
             return RedirectToAction("Index");
         }
 
         public IActionResult ShowDetails(int id)
         {
-            var selectedProduct = _productList.Find(x => x.Id == id);
-
-            if (selectedProduct is null)
-                throw new Exception($"There is no product with id {id}");
-
+            var selectedProduct = _inMemoryDatabase.FindProduct(id);
             return View(selectedProduct);
         }
 
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            var selectedProduct = _productList.Find(x => x.Id == id);
-
-            if (selectedProduct is null)
-                throw new Exception($"There is no product with id {id}");
-
+            var selectedProduct = _inMemoryDatabase.FindProduct(id);
             return View(selectedProduct);
         }
         
         [HttpPost]
         public IActionResult Edit(Product model)
         {
-            var selectedProduct = _productList.Find(x => x.Id == model.Id);
-
-            if (selectedProduct is null)
-                throw new Exception($"There is no product with id {model.Id}");
-
-            selectedProduct.Title = model.Title;
-            selectedProduct.Price = model.Price;
-            selectedProduct.Qty = model.Qty;
-
+            var selectedProduct = _inMemoryDatabase.FindProduct(model.Id);
+            _inMemoryDatabase.UpdateProduct(model);
             return RedirectToAction("Index");
-            // return View("Index", _productList);
         }
 
 
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var selectedProduct = _productList.Find(x => x.Id == id);
-
-            if (selectedProduct is null)
-                throw new Exception($"There is no product with id {id}");
-
+            var selectedProduct = _inMemoryDatabase.FindProduct(id);
             return View(selectedProduct);
         }
 
         [HttpPost]
         public IActionResult Delete(Product model)
         {
-            var selectedProduct = _productList.Find(x => x.Id == model.Id);
-
-            if (selectedProduct is null)
-                throw new Exception($"There is no product with id {model.Id}");
-
-            _productList.Remove(selectedProduct);
-
+            _inMemoryDatabase.DeleteProduct(model.Id);
             return RedirectToAction("Index");
-            // return View("Index", _productList);
-        }
-
-        public string SeedData()
-        {
-            if (_productList.Any() == false)
-            {
-                _productList.Add(new Product
-                {
-                    Id = 1,
-                    Title = "Laptop",
-                    Price = 1000,
-                    Qty = 10
-                });
-
-                _productList.Add(new Product
-                {
-                    Id = 2,
-                    Title = "Mobile",
-                    Price = 500,
-                    Qty = 15
-                });
-
-                return "Seed Data Successfully";
-            }
-            else
-            {
-                return "You can't seed again";
-            }
         }
         
     }

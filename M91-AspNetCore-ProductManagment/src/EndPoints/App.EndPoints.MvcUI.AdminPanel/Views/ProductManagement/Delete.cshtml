@@ -1,0 +1,23 @@
+﻿@model Product
+
+<div class="card">
+    <h5 class="card-header">جزئیات @Model.Title</h5>
+    <div class="card-body">
+        
+        <label class="form-label" asp-for="Price"></label>
+        <input class="form-control" asp-for="Price" />
+        <br />
+
+        <label for="ProductCount" class="form-label">موجودی در انبار</label>
+        <input class="form-control" asp-for="Qty" />
+        <br />
+
+        <p class="alert-danger">آیا از حذف کالا مطمئن هستید</p>
+        <form asp-controller="ProductManagement" asp-action="Delete" method="post">
+            <input type="hidden" class="form-control" asp-for="Id" readonly />
+            <input type="submit" class="btn btn-warning float-left" value="حذف کالا"/>
+            <a class="btn btn-light"
+               asp-controller="ProductManagement" asp-action="Index">بازگشت به لیست</a>
+        </form>
+    </div>
+</div>

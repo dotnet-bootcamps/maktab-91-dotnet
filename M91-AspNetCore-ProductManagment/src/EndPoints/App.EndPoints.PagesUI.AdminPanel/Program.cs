@@ -1,4 +1,4 @@
-namespace App.EndPoints.MvcUI.AdminPanel
+namespace App.EndPoints.PagesUI.AdminPanel
 {
     public class Program
     {
@@ -7,17 +7,18 @@ namespace App.EndPoints.MvcUI.AdminPanel
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddControllersWithViews()
+            builder.Services.AddRazorPages()
                 .AddRazorRuntimeCompilation();
             // add service01
             // add service02
             // add service03
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
@@ -29,10 +30,7 @@ namespace App.EndPoints.MvcUI.AdminPanel
 
             app.UseAuthorization();
 
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
-            //app.MapDefaultControllerRoute();
+            app.MapRazorPages();
 
             app.Run();
         }

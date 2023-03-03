@@ -7,7 +7,12 @@ namespace App.EndPoints.MvcUI.AdminPanel.Controllers
 {
     public class ProductManagementController : Controller
     {
-        private InMemoryDatabase _inMemoryDatabase = new InMemoryDatabase();
+        private InMemoryDatabase _inMemoryDatabase;
+
+        public ProductManagementController()
+        {
+            _inMemoryDatabase = new InMemoryDatabase();
+        }
 
         public IActionResult Index()
         {

@@ -1,6 +1,6 @@
-﻿namespace App.EndPoints.MvcUI.AdminPanel.Models
+﻿namespace App.EndPoints.MvcUI.AdminPanel.Models.Entities
 {
-    public class ProductViewModel
+    public class Product
     {
         public int Id { get; set; }
         public string Title { get; set; }

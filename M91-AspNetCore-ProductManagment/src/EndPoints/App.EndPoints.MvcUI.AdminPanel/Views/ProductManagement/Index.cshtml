@@ -1,4 +1,4 @@
-﻿@model List<ProductViewModel>
+﻿@model List<Product>
 @{
     ViewData["Title"] = "مدیریت محصولات";
 }
@@ -26,8 +26,16 @@
                 <td>@product.Price</td>
                 <td>@product.Qty</td>
                 <td>
-                    <a class="btn btn-info" asp-area="">مشاهده جزئیات</a>
-                    <a class="btn btn-warning" asp-area="">ویرایش</a>
+                    <a class="btn btn-info" asp-area="" 
+                       asp-controller="ProductManagement" 
+                       asp-action="ShowDetails"
+                       asp-route-id="@product.Id">مشاهده جزئیات</a>
+
+                    <a class="btn btn-warning" asp-area=""
+                       asp-controller="ProductManagement" 
+                       asp-action="Edit"
+                       asp-route-id="@product.Id">ویرایش</a>
+
                     <a class="btn btn-danger" asp-area="">حذف</a>
                 </td>
             </tr>

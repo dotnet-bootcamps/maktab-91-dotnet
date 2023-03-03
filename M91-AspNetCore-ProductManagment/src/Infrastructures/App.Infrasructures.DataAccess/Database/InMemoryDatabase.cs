@@ -1,7 +1,6 @@
-﻿using App.EndPoints.MvcUI.AdminPanel.Models.Entities;
-using System.Reflection;
+﻿using App.Domain.Core.Entities;
 
-namespace App.EndPoints.MvcUI.AdminPanel.Models.Database
+namespace App.Infrasructures.DataAccess.Database
 {
     public class InMemoryDatabase
     {
@@ -16,7 +15,7 @@ namespace App.EndPoints.MvcUI.AdminPanel.Models.Database
 
         public Product FindProduct(int id)
         {
-            var selectedProduct = _productList.Find(x=>x.Id==id);
+            var selectedProduct = _productList.Find(x => x.Id == id);
 
             if (selectedProduct is null)
                 throw new Exception($"There is no product with id {id}");

@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{42FA5C6E-5AAE-4AC0-AFE1-B3D8EF73F05B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.EndPoints.MvcUI.AdminPanel", "src\EndPoints\App.EndPoints.MvcUI.AdminPanel\App.EndPoints.MvcUI.AdminPanel.csproj", "{D1A7AB51-425E-4787-BDB8-101A47A4D642}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.EndPoints.MvcUI.AdminPanel", "src\EndPoints\App.EndPoints.MvcUI.AdminPanel\App.EndPoints.MvcUI.AdminPanel.csproj", "{D1A7AB51-425E-4787-BDB8-101A47A4D642}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-EndPoints", "03-EndPoints", "{C3AAA184-1746-4665-ABAD-F16C65F7C552}"
 EndProject
@@ -15,7 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Infrastructures", "02-In
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A29DE9A2-35EC-4153-A1D5-D3A543768F7E}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "App.EndPoints.ConsolUI", "src\EndPoints\App.EndPoints.ConsolUI\App.EndPoints.ConsolUI.vbproj", "{BFFF1644-D986-4481-ABCC-CCA5412CBCD3}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "App.EndPoints.ConsolUI", "src\EndPoints\App.EndPoints.ConsolUI\App.EndPoints.ConsolUI.vbproj", "{BFFF1644-D986-4481-ABCC-CCA5412CBCD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Domain.Core", "src\Domain\App.Domain.Core\App.Domain.Core.csproj", "{ABDC52AB-ABEB-4567-A76D-1CCB3C3778B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Infrasructures.DataAccess", "src\Infrastructures\App.Infrasructures.DataAccess\App.Infrasructures.DataAccess.csproj", "{1B0DFB81-F0D4-4AA9-9B6E-3F98600B08A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +35,14 @@ Global
 		{BFFF1644-D986-4481-ABCC-CCA5412CBCD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFFF1644-D986-4481-ABCC-CCA5412CBCD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFFF1644-D986-4481-ABCC-CCA5412CBCD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABDC52AB-ABEB-4567-A76D-1CCB3C3778B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABDC52AB-ABEB-4567-A76D-1CCB3C3778B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABDC52AB-ABEB-4567-A76D-1CCB3C3778B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABDC52AB-ABEB-4567-A76D-1CCB3C3778B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B0DFB81-F0D4-4AA9-9B6E-3F98600B08A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B0DFB81-F0D4-4AA9-9B6E-3F98600B08A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B0DFB81-F0D4-4AA9-9B6E-3F98600B08A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B0DFB81-F0D4-4AA9-9B6E-3F98600B08A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +53,8 @@ Global
 		{6F82DF43-CD78-408A-804A-3F16FB34AA33} = {42FA5C6E-5AAE-4AC0-AFE1-B3D8EF73F05B}
 		{56CB8C18-B119-43DD-A3DC-C80EC4195C11} = {42FA5C6E-5AAE-4AC0-AFE1-B3D8EF73F05B}
 		{BFFF1644-D986-4481-ABCC-CCA5412CBCD3} = {C3AAA184-1746-4665-ABAD-F16C65F7C552}
+		{ABDC52AB-ABEB-4567-A76D-1CCB3C3778B7} = {6F82DF43-CD78-408A-804A-3F16FB34AA33}
+		{1B0DFB81-F0D4-4AA9-9B6E-3F98600B08A2} = {56CB8C18-B119-43DD-A3DC-C80EC4195C11}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BEB200AF-23F8-4ACB-A34A-7FB2D2229449}

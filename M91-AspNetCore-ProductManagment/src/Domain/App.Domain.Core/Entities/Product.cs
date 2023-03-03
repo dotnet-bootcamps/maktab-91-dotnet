@@ -1,4 +1,4 @@
-﻿namespace App.EndPoints.MvcUI.AdminPanel.Models.Entities
+﻿namespace App.Domain.Core.Entities
 {
     public class Product
     {

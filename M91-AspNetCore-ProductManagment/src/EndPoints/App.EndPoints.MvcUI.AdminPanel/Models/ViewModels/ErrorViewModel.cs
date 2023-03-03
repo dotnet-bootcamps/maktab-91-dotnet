@@ -1,4 +1,4 @@
-namespace App.EndPoints.MvcUI.AdminPanel.Models
+namespace App.EndPoints.MvcUI.AdminPanel.Models.ViewModels
 {
     public class ErrorViewModel
     {

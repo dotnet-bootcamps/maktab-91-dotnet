@@ -1,6 +1,7 @@
 ﻿using App.EndPoints.MvcUI.AdminPanel.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using App.EndPoints.MvcUI.AdminPanel.Models.ViewModels;
 
 namespace App.EndPoints.MvcUI.AdminPanel.Controllers
 {

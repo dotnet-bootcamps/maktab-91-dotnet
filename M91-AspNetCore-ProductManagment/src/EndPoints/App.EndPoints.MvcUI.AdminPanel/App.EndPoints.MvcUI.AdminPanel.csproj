@@ -11,7 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\ViewModels\" />
+    <ProjectReference Include="..\..\Domain\App.Domain.Core\App.Domain.Core.csproj" />
+    <ProjectReference Include="..\..\Infrastructures\App.Infrasructures.DataAccess\App.Infrasructures.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

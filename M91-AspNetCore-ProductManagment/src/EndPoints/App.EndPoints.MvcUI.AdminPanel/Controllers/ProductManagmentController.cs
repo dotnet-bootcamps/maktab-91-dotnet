@@ -1,7 +1,7 @@
-﻿using App.EndPoints.MvcUI.AdminPanel.Models.Database;
-using App.EndPoints.MvcUI.AdminPanel.Models.Entities;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Reflection;
+using App.Domain.Core.Entities;
+using App.Infrasructures.DataAccess.Database;
 
 namespace App.EndPoints.MvcUI.AdminPanel.Controllers
 {

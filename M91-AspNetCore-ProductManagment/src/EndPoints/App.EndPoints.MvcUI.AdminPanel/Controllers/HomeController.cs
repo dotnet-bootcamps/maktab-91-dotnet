@@ -1,6 +1,7 @@
 ﻿using App.EndPoints.MvcUI.AdminPanel.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using App.Domain.Core.Entities;
 using App.EndPoints.MvcUI.AdminPanel.Models.ViewModels;
 
 namespace App.EndPoints.MvcUI.AdminPanel.Controllers
@@ -16,7 +17,17 @@ namespace App.EndPoints.MvcUI.AdminPanel.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var product = new Product
+            {
+                Id = -1,
+                Price = 0,
+                Qty = 0,
+                Title = "نا مشخص"
+            };
+
+            ViewBag.SingleProduct = product;
+            ViewBag.HeaderHtmlContent = "<script>alert('hi'); </script>salam sdasd asdasd asd <h1>This is html content</h1>";
+            return View(product);
         }
 
         public IActionResult Privacy()

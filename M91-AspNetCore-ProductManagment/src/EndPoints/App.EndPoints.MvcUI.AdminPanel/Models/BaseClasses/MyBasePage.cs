@@ -9,5 +9,14 @@ namespace App.EndPoints.MvcUI.AdminPanel.Models.BaseClasses
             get;
             set;
         }
+
+        public bool UseHasSuitableRole()
+        {
+            if (DateTime.Now.Second % 2 == 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

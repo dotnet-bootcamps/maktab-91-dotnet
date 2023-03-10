@@ -1,4 +1,5 @@
 ﻿@model List<Product>
+@inject TestInject test;
 @inherits MyBasePage<List<Product>>
 
 @{
@@ -6,7 +7,15 @@
     PageName = "Hasan Page";
 }
 
-@PageName
+@if (UseHasSuitableRole())
+{
+    @PageName
+    <br/>
+    @test.Name
+}
+
+@(5 + 5)
+
 
 <div class="row">
     <div class="col-6">
@@ -32,7 +41,7 @@
     {
         <tr>
             <td>@product.Id</td>
-            <td>@product.Title</td>
+            <td>@Html.Raw(product.Title)</td>
             <td>@product.Price</td>
             <td>@product.Qty</td>
             <td>
@@ -57,5 +66,7 @@
 
     </tbody>
 </table>
+
+<div asp-card-title="" asp-card-imageSrc=""></div>
 
 <partial name="_SamplePartialView" model="DateTime.Now" />

@@ -1,3 +1,5 @@
+using App.EndPoints.MvcUI.AdminPanel.Models.BaseClasses;
+
 namespace App.EndPoints.MvcUI.AdminPanel
 {
     public class Program
@@ -12,6 +14,8 @@ namespace App.EndPoints.MvcUI.AdminPanel
             // add service01
             // add service02
             // add service03
+            builder.Services.AddScoped<TestInject, TestInject>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

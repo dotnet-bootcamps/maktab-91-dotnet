@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Product
+@using System.Text.Json
+@{
     ViewData["Title"] = "صفحه اصلی";
 }
 @*
@@ -10,9 +12,20 @@
 @section HeaderMenuSection{
     <li>Custom LI in Index Page</li>
 }*@
+@Html.Raw(ViewBag.HeaderHtmlContent)
+<br />
+@(ViewBag.HeaderHtmlContent)
+<br />
+@JsonSerializer.Serialize(ViewBag.SingleProduct)
 
 <div class="text-center">
     <h3 class="display-4">داشبورد مدیریتی فروشگاه</h3>
 </div>
+
+
+sadasd
+asd
+d
+DdDdad<b>sdd</b>SDasdDad
 
 <partial name="_SamplePartialView" model="DateTime.Now" />

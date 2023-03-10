@@ -1,0 +1,43 @@
+﻿@page
+@model App.EndPoints.UI.MvcAndPages.Pages.Products.ListModel
+@{
+    ViewData["Title"] = "مدیریت محصولات";
+}
+
+<div class="row">
+    <div class="col-6">
+        <h1 class="h1 text-primary">لیست محصولات</h1>
+    </div>
+    <div class="col-6">
+        <a class="btn btn-info float-start" asp-area="" asp-page="/Products/Add">اضافه کردن کالا</a>
+    </div>
+</div>
+<hr class="" />
+<table class="table table-striped table-info w-100">
+    <thead>
+        <tr>
+            <th>شناسه</th>
+            <th>عنوان</th>
+            <th>قیمت</th>
+            <th>موجودی</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var product in Model.Products)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Title</td>
+                <td>@product.Price</td>
+                <td>@product.Qty</td>
+                <td>
+                    <a class="btn btn-warning" asp-area="" asp-page="/Products/Update" asp-route-id="@product.Id">ویرایش</a>
+                    <a class="btn btn-danger" asp-area="" asp-page="/Products/Delete" asp-route-id="@product.Id">حذف</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

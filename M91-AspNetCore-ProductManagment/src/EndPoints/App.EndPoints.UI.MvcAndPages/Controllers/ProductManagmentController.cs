@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Reflection;
-using App.Domain.Core.Entities;
+﻿using App.Domain.Core.Entities;
 using App.Infrasructures.DataAccess.Database;
+using Microsoft.AspNetCore.Mvc;
 
-namespace App.EndPoints.MvcUI.AdminPanel.Controllers
+namespace App.EndPoints.UI.MvcAndPages.Controllers
 {
     public class ProductManagementController : Controller
     {

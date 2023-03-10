@@ -3,7 +3,7 @@ using App.Infrasructures.DataAccess.Database;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace App.EndPoints.PagesUI.AdminPanel.Pages.Products
+namespace App.EndPoints.UI.MvcAndPages.Pages.Products
 {
     public class ListModel : PageModel
     {

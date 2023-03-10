@@ -3,28 +3,29 @@ using App.Infrasructures.DataAccess.Database;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace App.EndPoints.PagesUI.AdminPanel.Pages.Products
+namespace App.EndPoints.UI.MvcAndPages.Pages.Products
 {
-    public class ListModel : PageModel
+    public class AddModel : PageModel
     {
         private InMemoryDatabase _inMemoryDatabase;
 
-        public ListModel()
+        public AddModel()
         {
             _inMemoryDatabase = new InMemoryDatabase();
         }
 
         [BindProperty]
-        public List<Product> Products { get; set; }
+        public Product Product { get; set; }
 
         public void OnGet()
         {
-            Products = _inMemoryDatabase.GetAllProducts();
+            Product = new Product();
         }
 
-        public void OnPost()
+        public IActionResult OnPost()
         {
-
+            _inMemoryDatabase.AddProduct(Product);
+            return RedirectToPage("List");
         }
     }
 }

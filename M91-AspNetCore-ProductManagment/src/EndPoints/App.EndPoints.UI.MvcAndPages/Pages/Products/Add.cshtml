@@ -1,0 +1,28 @@
+﻿@page
+@model App.EndPoints.UI.MvcAndPages.Pages.Products.AddModel
+@{
+}
+
+<div class="card">
+    <h5 class="card-header">اضافه نمودن کلال جدید</h5>
+    <div class="card-body">
+        <form method="post">
+
+            <label for="Title" class="form-label">عنوان</label>
+            <input class="form-control" asp-for="Product.Title" />
+            <br />
+
+            <label class="form-label" asp-for="Product.Price"></label>
+            <input class="form-control" asp-for="Product.Price" />
+            <br />
+
+            <label for="ProductCount" class="form-label">موجودی در انبار</label>
+            <input class="form-control" asp-for="Product.Qty" />
+            <br />
+
+            <input type="submit" class="btn btn-success float-left" value="ذخیره" />
+
+            <a class="btn btn-light float-left" asp-page="/Products/List">بازگشت به لیست</a>
+        </form>
+    </div>
+</div>

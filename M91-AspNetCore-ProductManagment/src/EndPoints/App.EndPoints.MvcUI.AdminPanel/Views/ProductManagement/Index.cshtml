@@ -1,8 +1,12 @@
 ﻿@model List<Product>
+@inherits MyBasePage<List<Product>>
+
 @{
     ViewData["Title"] = "مدیریت محصولات";
+    PageName = "Hasan Page";
 }
 
+@PageName
 
 <div class="row">
     <div class="col-6">
@@ -11,43 +15,47 @@
         <a class="btn btn-info float-start" asp-area="" asp-controller="ProductManagement" asp-action="Add">اضافه کردن کالا</a></div>
 </div>
 <hr class="" />
+
 <table class="table table-striped table-info w-100">
     <thead>
-        <tr>
-            <th>شناسه</th>
-            <th>عنوان</th>
-            <th>قیمت</th>
-            <th>موجودی</th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>شناسه</th>
+        <th>عنوان</th>
+        <th>قیمت</th>
+        <th>موجودی</th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
 
-        @foreach (var product in Model)
-        {
-            <tr>
-                <td>@product.Id</td>
-                <td>@product.Title</td>
-                <td>@product.Price</td>
-                <td>@product.Qty</td>
-                <td>
-                    <a class="btn btn-info" asp-area=""
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>@product.Id</td>
+            <td>@product.Title</td>
+            <td>@product.Price</td>
+            <td>@product.Qty</td>
+            <td>
+                <a class="btn btn-info" asp-area=""
                    asp-controller="ProductManagement"
                    asp-action="ShowDetails"
                    asp-route-id="@product.Id">مشاهده جزئیات</a>
 
-                    <a class="btn btn-warning" asp-area=""
+                <a class="btn btn-warning" asp-area=""
                    asp-controller="ProductManagement"
                    asp-action="Edit"
                    asp-route-id="@product.Id">ویرایش</a>
 
-                    <a class="btn btn-danger" asp-area=""
+                <a class="btn btn-danger" asp-area=""
                    asp-controller="ProductManagement"
                    asp-action="Delete"
                    asp-route-id="@product.Id">حذف</a>
-                </td>
-            </tr>
-        }
+
+            </td>
+        </tr>
+    }
 
     </tbody>
 </table>
+
+<partial name="_SamplePartialView" model="DateTime.Now" />

@@ -1,7 +1,18 @@
 ﻿@{
     ViewData["Title"] = "صفحه اصلی";
 }
+@*
+@section FooterSection {
+    <h1>Hi i'm from footer section</h1>
+
+}
+
+@section HeaderMenuSection{
+    <li>Custom LI in Index Page</li>
+}*@
 
 <div class="text-center">
-    <h3 class="display-4">داشبود مدیریتی فروشگاه</h3>
+    <h3 class="display-4">داشبورد مدیریتی فروشگاه</h3>
 </div>
+
+<partial name="_SamplePartialView" model="DateTime.Now" />

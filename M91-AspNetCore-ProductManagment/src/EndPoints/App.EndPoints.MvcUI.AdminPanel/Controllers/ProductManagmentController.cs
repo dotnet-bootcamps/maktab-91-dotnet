@@ -2,6 +2,7 @@
 using System.Reflection;
 using App.Domain.Core.Entities;
 using App.Infrasructures.DataAccess.Database;
+using Microsoft.AspNetCore.Mvc.Razor;
 
 namespace App.EndPoints.MvcUI.AdminPanel.Controllers
 {

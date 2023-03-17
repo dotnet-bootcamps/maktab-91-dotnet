@@ -24,11 +24,13 @@ namespace App.EndPoints.PagesUI.AdminPanel
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
 
             app.UseRouting();
 
+            app.UseStaticFiles();
+
             app.UseAuthorization();
+
 
             app.MapRazorPages();
 
